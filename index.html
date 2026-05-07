@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Doações Solidárias | Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Portal de Doações Solidárias</h1>
+        <p>Igreja da Salvação - Gestão Interna</p>
+    </header>
+
+    <main class="dashboard">
+        <aside class="sidebar">
+            <section class="card">
+                <h2>Sobre Nós</h2>
+                <a href="#" class="btn-doacao">Fazer doação via PIX 💜</a>
+                <p><strong>Igreja da Salvação</strong>: Apoio comunitário e dignidade humana.</p>
+                <p><strong>Cultos:</strong> Seg a Sáb, 19h às 21h.</p>
+            </section>
+            
+            <section class="card">
+                <h2>Informações de Contato</h2>
+                <p><strong>Endereço:</strong> Rua Kátia, 37 - Centro</p>
+                <p><strong>Telefone:</strong> (11) 4002-8922</p>
+                <p><strong>Email:</strong> contato@igrejadasalvacao.org.br</p>
+            </section>
+
+            <section class="card">
+                <h2>📦 Status do Estoque</h2>
+                <div class="item-estoque">
+                    <h4>Alimentos</h4>
+                    <p><small id="data-chartAlimentos">Aguardando atualização...</small></p>
+                </div>
+                <div class="item-estoque">
+                    <h4>Vestimentas</h4>
+                    <p><small id="data-chartVestimentas">Aguardando atualização...</small></p>
+                </div>
+                <div class="item-estoque">
+                    <h4>Higiene Pessoal</h4>
+                    <p><small id="data-chartHigiene">Aguardando atualização...</small></p>
+                </div>
+            </section> 
+        </aside>
+
+        <section class="main-content">
+            <section class="card">
+                <h2>➕ Registrar Movimentação</h2>
+                <form id="formMovimentacao">
+                    <div class="form-group">
+                        <label>Tipo</label>
+                        <select id="tipo">
+                            <option value="entrada">Entrada (+)</option>
+                            <option value="saida">Saída (-)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoria</label>
+                        <select id="categoria">
+                            <option value="chartAlimentos">Alimentos</option>
+                            <option value="chartVestimentas">Vestimentas</option>
+                            <option value="chartHigiene">Higiene Pessoal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantidade</label>
+                        <input type="number" id="quantidade" min="1" max="100" placeholder="Ex: 10">
+                    </div>
+                    <button type="button" onclick="atualizarSistema()">Registrar</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>📊 Visão Geral de Estoque</h2>
+                <div class="canvas-container"><canvas id="chartAlimentos"></canvas></div>
+                <div class="canvas-container"><canvas id="chartVestimentas"></canvas></div>
+                <div class="canvas-container"><canvas id="chartHigiene"></canvas></div>
+            </section>
+
+            <section class="card">
+                <h2>📋 Histórico Recente</h2>
+                <input type="text" id="inputBusca" onkeyup="filtrarTabela()" placeholder="🔍 Buscar movimentação...">
+                <div style="overflow-x: auto;">
+                    <table id="tabelaLogs">
+                        <thead>
+                            <tr>
+                                <th>Data/Hora</th>
+                                <th>Ação</th>
+                                <th>Item</th>
+                                <th>Qtd</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Igreja da Salvação. Interface desenvolvida para fins acadêmicos.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
