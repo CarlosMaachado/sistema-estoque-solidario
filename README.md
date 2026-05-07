@@ -21,5 +21,5 @@ Histórico Auditável : Tabela de logs com registro automático de dados e hora 
 
 Filtro Inteligente : Busca dinâmica no histórico de movimentações para facilitar a consulta rápida.
 
- Objetivo Acadêmico
+ Objetivo Acadêmico:
 Este projeto foi desenvolvido como parte de minha trajetória na Universidade São Judas , passando a aplicar conceitos de lógica de programação em soluções de impacto social real. Como estudante de Publicidade e Propaganda , foquei na criação de uma ferramenta que não apenas processa dados, mas comunica a urgência e o status das necessidades comunitárias de forma clara e visual.
