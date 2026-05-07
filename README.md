@@ -1,4 +1,6 @@
 Dashboard de Gestão de Estoque Solidário
+
+
 Interface interativa desenvolvida para otimizar o controle de donativos da Igreja da Salvação , unindo design intuitivo e análise de dados para facilitar o trabalho voluntário e a transparência logística.
 
  Tecnologias Utilizadas
